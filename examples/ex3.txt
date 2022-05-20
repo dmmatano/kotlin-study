@@ -1,0 +1,18 @@
+fun main(args: Array<String>) {
+  /******************** Pairs *********************/
+  val exemplo="ola" to "mundo"
+  println(exemplo.first)
+  println(exemplo.second)
+  /*********Lista mutável (dinamica)**************/
+  val lista=mutableListOf<String>()
+  lista.add("Num1")
+  lista.add("NoNeedToBeNum2")
+  lista.add("sugarhoneyicedtea")
+  lista.remove("NoNeedToBeNum2")
+  println(lista)
+  println(lista.contains("NoNeedToBeNum2"))
+  println(lista.subList(1,2))
+  /*******************Constants********************/
+  //são atribuidas durante compilacao
+  
+}

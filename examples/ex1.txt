@@ -1,0 +1,50 @@
+import java.util.* //importa tudo de java.util
+fun main(args: Array<String>) {
+  
+  val x=4 //val não pode mudar
+  var y=1 //var pode mudar
+  y+=x
+  println(y)
+  /***********Algumas operações que o Kotlin cobre*********/
+  println(x.times(2))
+  println(x.div(2))
+  println(x.plus(1))
+  println(x.minus(3))
+  
+  var b:Byte=1
+  var numero:Int?=null //? indica que numero pode ser nulo
+  //permite lista nula
+  var lista2:List<String>? =null
+  //permite lista e elementos nulos
+  var lista3:List<String?>?=null
+
+  /****************** Strings ****************************/
+  var texto1="Olá"
+  var texto2=", Mundo"
+  println(texto1+texto2)
+  var num1=5
+  var num2=10
+  println("O valor $num1 multiplicado por 2 é $num2")
+  println("A soma deles é ${num1+num2}")
+  /***************Condições*****************************/
+  var num=5
+  if(num1 in 1..5)println("Está entre 1 e 5")
+
+  //outra forma de if/else
+  when(num){
+    0->println("Num é 0")
+    5->println("Num é 5")
+    else->num=0
+  }
+  for(i in 5 downTo 1) println(i)
+  for(i in 3..6 step 1) println(i)
+  /**********arrays********************************/
+  val myList=arrayOf("pao",3)
+  println(Arrays.toString(myList))
+  val lista1=arrayOf(num1,num2)
+  val listaMix=arrayOf(myList,lista1,arrayOf("loucura", "9"))
+  println(Arrays.toString(listaMix))
+  //array de tamanho 5
+  val arr=Array(5){it*3}
+  println(arr.asList())
+}

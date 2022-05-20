@@ -1,0 +1,51 @@
+import java.util.Random
+fun main(args: Array<String>) {
+  feedTheFish()
+}
+
+fun changeWater(
+  day:String,
+  temperature:Int=22,
+  dirty:Int=20
+):Boolean{
+  return when{
+    day=="Sunday"->true
+    temperature>=31->true
+    dirty>30->true
+    else ->false
+  }
+}
+
+fun feedTheFish(){
+  val day=randomDay()
+  val fishfood=fishFood(day)
+  println("Today in $day ! This piece of shit named FISH was feeded with $fishfood!")
+  //changeWater(day,20,50)
+  //changeWater(day)
+  var changed:Boolean=changeWater(dirty=50,day=day)
+  if(changed){
+    println("The water was changed :)")
+  }else{
+    println("No need to change water ;)")
+  }
+}
+
+fun randomDay():String{
+  val week=listOf("Monday", "Tuesday","Wednesday", "Thursday", "Friday", "Saturday", "Sunday")
+  return week[Random().nextInt(7)]
+}
+
+fun fishFood(day:String):String{
+  var food="nothing"
+  return when(day){
+    "Monday"->"flakes"
+    "Tuesday"->"shit"
+    "Wednesday"->"insects"
+    "Thursday"->"sugar, honey, iced tea hummmmm"
+    "Friday"->"tears"
+    "Saturday"->"pizza"
+    "Sunday"->"Mc Donnalds Sunday"
+    else ->"nothing"
+  }
+  
+}
