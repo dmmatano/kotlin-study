@@ -1,0 +1,31 @@
+fun main(args : Array<String>) {
+
+    var list = mutableListOf<Int>()
+    
+    for(i in 0..19){
+        list.add((0..20).random())
+    }
+    
+    println(list)
+    
+    println(bubbleSort(list))
+    
+    list.sort()
+    println(list)
+        
+}
+
+fun bubbleSort(list:MutableList<Int>):MutableList<Int>{
+    
+    for(j in 1..list.size-1){        
+        for(i in 0..list.size-j-1){            
+            if(list[i]>list[i+1]){
+                val aux = list[i]
+                list[i] = list[i+1]
+                list[i+1] = aux
+            }
+        }        
+    }
+    
+    return list
+}
