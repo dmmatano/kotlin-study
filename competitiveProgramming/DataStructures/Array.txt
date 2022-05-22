@@ -1,0 +1,33 @@
+fun main(args : Array<String>) {
+
+    var list = mutableListOf<String>()
+    
+    list.add("Joe")
+    list.add("Eve")
+    list.add("Jonas")
+    list.add("David")
+    
+    println(list)
+    println("Size ${list.size}")
+    println("Num 3 is ${list[2]}")
+    
+    list.add("Petter")
+    list.set(1,"Cameron")
+    list.add("Jesse")
+    
+    var list2 = list.subList(0,4)
+    
+    println(list)
+    println(list2)
+    
+    list.remove("David")
+    list.removeAt(1)
+    
+    println(list)
+    
+    list.clear()
+    
+    println(list)
+    
+        
+}
