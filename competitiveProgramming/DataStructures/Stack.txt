@@ -1,0 +1,42 @@
+
+fun main(args : Array<String>) {
+	
+    val stack = MyStack()
+  	stack.apply{
+        push(3)
+        push(1)
+        push(2)
+        push(5)
+    }
+    stack.show()
+    
+    stack.pop()
+    
+    stack.show()
+    
+}
+
+class MyStack{
+    private val elements = arrayListOf<Int>()
+    
+    fun push(element:Int){
+        elements.add(element)
+    }
+    
+    fun pop():Int?{
+        if(elements.size==0) return null
+        return elements.removeAt(elements.size - 1)
+    }
+    
+    fun show(){
+        var str = buildString{
+            appendln("______ TOP ______")
+            elements.asReversed().forEach{
+                appendln("    $it")
+            }
+            appendln("_________________")
+        }
+        println(str)
+    }
+    
+}
