@@ -1,0 +1,75 @@
+
+fun main(args : Array<String>) {
+	
+    //Optionals and null-safety
+    var name1:Name? = null
+    name1?.show()
+    name1 = Name("Densel")
+    name1.show()
+    
+    //elvis operator
+    val immutableName:Name = name1?:Name("Nameless")
+    
+    //when you know that it's not-null
+    name1!!.show()
+    
+    //generics
+    val box = Box()
+    val amazingBox = PremiumBox<String>()
+    box.put(5)
+    
+    box.let{
+        it.remove()
+    }
+    
+    
+    
+}
+
+class Name(val name: String?){
+    
+    fun show(){
+        println(name)
+    }
+ 
+}
+
+/** Generics *--* **/
+class Box{
+    
+	var content: Any? = null
+
+    fun put(content: Any?) {
+    	this.content = content
+    }
+
+    fun remove(): Any? {
+        val temp = content
+        content = null
+    	return temp
+    }
+
+    fun isEmpty(): Boolean {
+    	return content == null
+    }
+}
+
+
+class PremiumBox<T>{
+    
+	var content: T? = null
+
+    fun put(content: T?) {
+    	this.content = content
+    }
+
+    fun remove(): T? {
+        val temp = content
+        content = null
+    	return temp
+    }
+
+    fun isEmpty(): Boolean {
+    	return content == null
+    }
+}
