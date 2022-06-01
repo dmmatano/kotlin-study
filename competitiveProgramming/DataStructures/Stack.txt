@@ -1,7 +1,9 @@
+import java.util.Stack
 
 fun main(args : Array<String>) {
 	
     val stack = MyStack()
+    
   	stack.apply{
         push(3)
         push(1)
@@ -9,10 +11,18 @@ fun main(args : Array<String>) {
         push(5)
     }
     stack.show()
-    
     stack.pop()
-    
     stack.show()
+    
+    val stack2 = Stack<String>()
+    println(stack2.empty())
+    stack2.push("ola")
+    stack2.push("tudo")
+    stack2.push("bem")
+    println(stack2.empty())
+    stack2.pop()
+    println(stack2.peek())
+    
     
 }
 
